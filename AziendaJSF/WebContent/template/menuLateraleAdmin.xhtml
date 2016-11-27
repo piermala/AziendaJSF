@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"	
+    xmlns:p="http://primefaces.org/ui">
+
+
+	<h:form>
+		<p:growl id="messages" showDetail="false" />
+
+		<h3 style="margin-top: 0">Menu Admin </h3>
+		
+		<p:menu>
+		
+			<p:submenu label="Home">
+				<p:menuitem value="Home" outcome="HomepageAdmin" icon="ui-icon-disk" />
+			</p:submenu>
+			
+			<p:submenu label="Clienti">
+				<p:menuitem value="Nuovo cliente" outcome="nuovoCliente" icon="ui-icon-disk"/>
+				<p:menuitem value="Elenco clienti" outcome="elencoClienti" icon="ui-icon-disk"/>
+			</p:submenu>
+			
+			<p:submenu label="Dipendenti">
+				<p:menuitem value="Aggiungi dipendente"	outcome="AggiungiDipendente" icon="ui-icon-disk" />
+				<p:menuitem value="Elenco dipendenti" outcome="elencoDipendenti" icon="ui-icon-disk"/>				
+				<p:menuitem value="Emissione busta paga" outcome="emissioneBustaPaga" icon="ui-icon-disk"/>
+				<p:menuitem value="Elenco buste paga" outcome="elencoBustePaga" icon="ui-icon-disk"/>
+			</p:submenu>			
+			
+			<p:menuitem value="Log Out" outcome="logout" ></p:menuitem>
+			
+		</p:menu>
+
+	</h:form>
+</html>

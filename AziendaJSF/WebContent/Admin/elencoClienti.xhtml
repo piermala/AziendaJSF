@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" >
+
+<ui:composition template="../template/templateElencoClienti.xhtml">	
+	<ui:define name="elencoClientiContenuto">
+	
+		
+		<h2>Qua vedremo l'elenco clienti</h2>
+
+
+		<h:form id="form">
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:dataTable id="clienti" var="c" value="#{clEditView.listaClienti}" editable="true" style="margin-bottom:20px">
+				
+				<f:facet name="header">Elenco clienti</f:facet>
+
+				<p:ajax event="rowEdit" listener="#{clEditView.onRowEdit}" update=":form:msgs" />
+				<p:ajax event="rowEditCancel" listener="#{clEditView.onRowCancel}" update=":form:msgs" />
+					
+					
+				<p:column headerText="Nome">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{c.nome}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="modelInput" value="#{c.nome}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Cognome">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{c.cognome}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{c.cognome}" style="width:100%"
+								label="Cognome" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Ragione Sociale">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{c.ragioneSociale}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{c.ragioneSociale}" style="width:100%"
+								label="Ragione Sociale" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Partita IVA">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{c.partitaIVA}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{c.partitaIVA}" style="width:100%" label="Partita IVA"></p:inputText>
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Username">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{c.username}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{c.username}" style="width:100%"
+								label="Username" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+
+
+				<!--  MODIFICA  -->
+				<p:column style="width:22px">
+					<p:rowEditor />
+				</p:column>
+
+
+
+<!-- 				 ELIMINA  -->
+<!-- 				<p:column style="width:22px"> -->
+<!-- 					<p:commandLink action="#{clEditView.delete(f)}" -->
+<!-- 						onclick="return confirm('Sei sicuro di voler cancellare?')" -->
+<!-- 						id="iconOnly" update="form"> -->
+<!-- 						<i class="ui-icon ui-icon-trash" /> -->
+<!-- 					</p:commandLink> -->
+<!-- 				</p:column> -->
+
+			</p:dataTable>
+
+		</h:form>
+
+	</ui:define>
+	
+</ui:composition>
+
+
+
+</html>

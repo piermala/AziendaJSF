@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+		<style>
+			.text{
+				font-family: Alegreya;
+			}
+		</style>
+	</h:head>
+
+
+
+	<h:body>
+
+		<p:layout fullPage="true">
+	
+			<p:layoutUnit position="north" size="100" resizable="true"
+				closable="true" collapsible="true">
+				<ui:include src="../components/header.xhtml" />
+			</p:layoutUnit>
+	
+			<p:layoutUnit position="south" resizable="true" closable="true"
+				collapsible="true">
+<!-- 				<ui:include src="../footer.xhtml" /> -->
+			</p:layoutUnit>
+	
+			<p:layoutUnit position="west" size="250" header="Menu' Laterale"
+				resizable="true" closable="true" collapsible="true">
+<!-- 				<ui:include src="../Admin/menuLateraleAdmin.xhtml" /> -->
+			</p:layoutUnit>
+	
+			<p:layoutUnit position="center">
+				<ui:insert name="loginContent" /> 
+			</p:layoutUnit>
+	
+		</p:layout>
+
+
+
+	<!-- 		<h1 class="text">LOGIN PAGE</h1> -->
+		
+<!-- 		<h:form> -->
+<!-- 	    <p:panel header="YOUR LOGIN PAGE" styleClass="text"> -->
+<!-- 	        <p:messages autoUpdate="true"/> -->
+	 
+<!-- 	        <h:panelGrid id="grid" columns="4" cellpadding="5"> -->
+<!-- 	            <h:outputLabel for="username" value="Username:" style="font-weight:bold" styleClass="text"/>                     -->
+<!-- 	            <p:inputText id="username" value="#{u.username}" required="true" label="Name" requiredMessage="Inserisci il tuo username!"/><br/> -->
+<!-- 	            <p:message for="username" /> -->
+	 
+<!-- 	            <h:outputLabel for="password" value="Password:" style="font-weight:bold" styleClass="text"/>                     -->
+<!-- 	            <p:password id="password" value="#{u.password}" label="Password" required="true" requiredMessage="Inserisci la password!"/><br/> -->
+<!-- 	            <p:message for="password" />        -->
+<!-- 	        </h:panelGrid> -->
+	 
+<!-- 	        <p:commandButton value="Accedi" ajax="true" icon="ui-icon-check" validateClient="true" style="margin-right:10px" action="#{controller.validaLogin(u)}" styleClass="text"/>         -->
+<!-- 	    </p:panel> -->
+<!-- 		</h:form> -->
+
+
+	</h:body>
+	
+	
+</html>
